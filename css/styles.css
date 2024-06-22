@@ -1,0 +1,252 @@
+/* Reset básico y estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: grid;
+  grid-template-rows: auto 1fr; /* Header, Main Content */
+  min-height: 100vh;
+}
+
+header {
+  background-color: #414141;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Estilos para el menú inicial */
+.menu-inicial {
+  background-color: white;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 10vw;
+}
+
+.title-menu {
+  margin-bottom: 20px;
+  font-size: 4rem;
+}
+
+.menu-inicial form {
+  display: grid;
+  gap: 15px;
+}
+
+.menu-inicial .label, .menu-inicial select, .menu-inicial input, .menu-inicial button {
+  font-size: 2rem;
+}
+
+.menu-inicial button {
+  padding: 10px;
+  background-color: #414141;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.menu-inicial button:hover {
+  background-color: #555;
+}
+
+/* Estilos para el juego */
+.conteiner-game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.container-intentos {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-align: center;
+}
+
+.container-puntaje-player1 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.container-puntaje-player1 p {
+  text-align: center;
+}
+.container-puntaje-player2 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.container-puntaje-player2 p {
+  text-align: center;
+}
+
+.container-resultado {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-align: center;
+}
+
+.zona-game {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.jugada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jugada img {
+  max-width: 350px;
+}
+
+.container-puntaje-player2 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.container-resultado {
+  text-align: center;
+}
+
+.container-piedra-papel-tijera {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.piedra-papel-tijera {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.piedra-papel-tijera img {
+  max-width: 100px;
+}
+
+/* Estilos específicos para elementos dentro de .piedra-papel-tijera */
+.piedra-papel-tijera > div {
+  text-align: center;
+}
+
+.puntaje-jugador, .intentos {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.puntaje, .vs, #resultado, #resultado-final {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* Estilo para el botón de volver al menú inicial */
+#volver-menu {
+  padding: 10px 20px;
+  background-color: #414141;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 2rem;
+  text-align: center;
+  margin: 5px auto;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+#volver-menu:hover {
+  background-color: #555;
+}
+
+
+/* Media Queries para hacer la página responsive */
+
+/* Para pantallas de hasta 1500px */
+@media screen and (max-width: 1500px) {
+  .container-piedra-papel-tijera {
+    grid-template-columns: 1fr;
+  }
+
+  .jugada img {
+    max-width: 180px;
+  }
+}
+
+/* Para pantallas de hasta 1200px */
+@media screen and (max-width: 1200px) {
+  .container-piedra-papel-tijera {
+    grid-template-columns: 1fr;
+  }
+
+  .jugada img {
+    max-width: 150px;
+  }
+}
+
+/* Para pantallas de hasta 992px */
+@media screen and (max-width: 992px) {
+  .container-piedra-papel-tijera {
+    grid-template-columns: 1fr;
+  }
+
+  .jugada img {
+    max-width: 120px;
+  }
+}
+
+/* Para pantallas de hasta 768px */
+@media screen and (max-width: 768px) {
+  .container-piedra-papel-tijera {
+    grid-template-columns: 1fr;
+  }
+
+  .jugada img {
+    max-width: 100px;
+  }
+
+  .puntaje-jugador, .puntaje  {
+    font-size: 18px;
+  }
+}
+
+/* Para pantallas de hasta 576px */
+@media screen and (max-width: 576px) {
+  .container-piedra-papel-tijera {
+    grid-template-columns: 1fr;
+  }
+
+  .jugada img {
+    max-width: 80px;
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>juego piedra papel o tijera</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Last-Modified" content="0">
+  <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+</head>
+
+<body>
+  <header>
+    <h1>piedra papel o tijera</h1>
+  </header>
+
+  <main>
+    <!-- Menu Inicial -->
+    <div id="menu-inicial" class="menu-inicial">
+      <h2 class="title-menu">Bienvenido al juego</h2>
+      <form id="configuracion-juego">
+        <label for="modo-juego"><p class="label">Selecciona el modo de juego:</p></label>
+        <select id="modo-juego" name="modo-juego">
+          <option value="maquina"><p class="label">Jugar contra la máquina</p></option>
+          <option value="persona"><div class="label">Jugar contra otra persona</div></option>
+        </select>
+        <br>
+        <label for="num-partidas" class="label">Número de partidas:</label>
+        <input type="number" id="num-partidas" name="num-partidas" min="1" max="10">
+        <br>
+        <button type="submit">Iniciar Juego</button>
+      </form>
+    </div>
+
+    <!-- Juego -->
+    <div id="juego" class="conteiner-game" style="display: none;">
+        <div class="container-intentos intentos">Intentos</div>
+        <div class="container-puntaje-player1">
+          <p class="puntaje-jugador">PUNTOS JUGADOR 1</p>
+          <p class="puntaje">0</p>
+        </div>
+        <div class="zona-game">
+          <div id="jugada-jugador1" class="jugada">
+            <img src="assets\interrogacion.png" alt="Jugada Jugador 1">
+          </div>
+          <p class="vs">vs</p>
+          <div id="jugada-jugador2" class="jugada">
+            <img src="assets\interrogacion.png" alt="Jugada Jugador 2">
+          </div>
+        </div>
+        <div class="container-puntaje-player2">
+          <p class="puntaje-jugador">PUNTOS JUGADOR 2</p>
+          <p class="puntaje">0</p>
+        </div>
+        <div class="container-resultado">
+          <p id="resultado"></p>
+          <p id="resultado-final"></p>
+        </div>
+        <button id="volver-menu" style="display: none;">Volver al Menú Inicial</button>
+      </div>
+      
+
+      <div id="piedra-papel-tijera" class="container-piedra-papel-tijera" style="display: none;">
+        <div class="piedra-papel-tijera">
+          <div id="piedra" class="piedra">
+            <img src="assets/piedra.png" alt="imagen piedra">
+          </div>
+          <div id="papel" class="papel">
+            <img src="assets/papel.png" alt="imagen papel">
+          </div>
+          <div id="tijera" class="tijera">
+            <img src="assets/tijera.png" alt="imagen tijera">
+          </div>
+        </div>
+      </div>
+  </main>
+
+  <script src="juego.js"></script>
+</body>
+</html>
